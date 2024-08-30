@@ -1,0 +1,45 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'18'
+-sourcepath
+'C:/Users/unifgimoreira/Documents/NetBeansProjects/aula04exe05/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/unifgimoreira/Documents/NetBeansProjects/aula04exe05/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'aula04exe05 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'aula04exe05 1.0-SNAPSHOT API'
+com.mycompany.aula04exe05
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\src\main\java = 1725058060625
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\allclasses-index.html = 1725060446874
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\allpackages-index.html = 1725060446882
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\copy.svg = 1725060446972
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\element-list = 1725060446793
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\help-doc.html = 1725060446943
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\index-all.html = 1725060446924
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\index.html = 1725060446933
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\jquery-ui.overrides.css = 1725060447101
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\member-search-index.js = 1725060446905
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\module-search-index.js = 1725060446890
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\overview-tree.html = 1725060446859
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\package-search-index.js = 1725060446895
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\script.js = 1725060446962
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\search.js = 1725060446979
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\stylesheet.css = 1725060446954
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\tag-search-index.js = 1725060446911
+C:\Users\unifgimoreira\Documents\NetBeansProjects\aula04exe05\target\reports\apidocs\type-search-index.js = 1725060446900
