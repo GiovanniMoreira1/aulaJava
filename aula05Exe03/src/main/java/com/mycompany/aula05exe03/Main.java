@@ -1,21 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.mycompany.aula05exe03;
-import java.util.Scanner;
 
+/**
+ *
+ * @author uniflcastro
+ */
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Navio n = new Navio(5, "Teste navio");
+        NavioDeGuerra ng = new NavioDeGuerra((float) 3.2, (float) 4.1, 5, "Teste navio de guerra");
+        NavioMercante nm = new NavioMercante((float) 5.5, (float) 8.2, 5, "Teste navio mercante");
+        Cruzador c = new Cruzador(2, (float) 4.1, (float) 5.5, 5, "Teste cruzador");
+        PortaAvioes pa = new PortaAvioes(2, (float) 3.2, (float) 8.2, 5, "Teste Porta-Aviões");
         
-        Navio navio = new Navio("Titanic", 350);
-        NavioDeGuerra navioGuerra = new NavioDeGuerra(150, 500, "navio de guerra", 140);
-        NavioMercante navioMercante = new NavioMercante(150, 100, "cargo", 50);
-        Cruzador navioCruzador = new Cruzador(12, 500, 160, "navio pirata", 80);
-        PortaAvioes portaAvioes = new PortaAvioes(20, 400, 195, "porta aviões", 350);
-        
-        navio.exibirInfoGeral();
-        navioGuerra.exibirArmas();
-        navioGuerra.poderDeFogo();
-        navioMercante.carregamento();
-        navioCruzador.poderDeFogo();
-        portaAvioes.poderDeFogo();
+        System.out.println("Navio: ");
+        n.ExibirinfoGeral();
+        System.out.println("Navio de Guerra: ");
+        ng.PoderDeFogo();
+        ng.ExibirArmas();
+        System.out.println("Navio Mercante: ");
+        nm.Carregamento();
+        System.out.println("Cruzador: ");
+        c.PoderDeFogo();
+        System.out.println("Porta-Aviões");
+        pa.PoderDeFogo();
     }
+    
+    
 }

@@ -1,27 +1,43 @@
 package com.mycompany.aula05exe03;
 
-public class NavioDeGuerra extends Navio{
-    protected double blindagem, ataque;
+public class NavioDeGuerra extends Navio {
+    protected float blindagem;
+    protected float ataque;
 
-    public NavioDeGuerra(double blindagem, double ataque, String nome, int numTripulantes) {
-        super(nome, numTripulantes);
+    public NavioDeGuerra(float blindagem, float ataque, int numTripulante, String nome) {
+        super(numTripulante, nome);
         this.blindagem = blindagem;
         this.ataque = ataque;
     }
+    
+    public void PoderDeFogo(){
+        System.out.println("| Ataque : " + ataque + " |");
+    }
+    
+    public void ExibirArmas(){
+        ExibirinfoGeral();
+        PoderDeFogo();
+        System.out.println("| Blindagem : " + blindagem + " |");
+    }
 
-    
+    public float getBlindagem() {
+        return blindagem;
+    }
+
+    public void setBlindagem(float blindagem) {
+        this.blindagem = blindagem;
+    }
+
+    public float getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(float ataque) {
+        this.ataque = ataque;
+    }
+
     public NavioDeGuerra() {
-        
     }
     
-    public void poderDeFogo() {
-        System.out.println("Ataque: " + ataque);
-    }
-    public  void exibirArmas() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Número de tripulantes: " + numTripulantes);
-        System.out.println("Blindagem: " + blindagem);
-        poderDeFogo();
-    }
     
 }

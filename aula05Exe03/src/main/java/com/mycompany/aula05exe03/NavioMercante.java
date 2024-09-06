@@ -1,22 +1,39 @@
+
 package com.mycompany.aula05exe03;
 
-public class NavioMercante extends Navio {
-    protected double capacidadeCarga, carga;
+public class NavioMercante extends Navio{
+    protected float capacidadeCarga;
+    protected float carga;
 
-    public NavioMercante(double capacidadeCarga, double carga, String nome, int numTripulantes) {
-        super(nome, numTripulantes);
+    public NavioMercante(float capacidadeCarga, float carga, int numTripulante, String nome) {
+        super(numTripulante, nome);
         this.capacidadeCarga = capacidadeCarga;
         this.carga = carga;
     }
+    
+    public void Carregamento(){
+        ExibirinfoGeral();
+        System.out.println("| Capacidade : " + carga/capacidadeCarga + " |");
+    }
 
-    
-    
+    public float getCapacidadeCarga() {
+        return capacidadeCarga;
+    }
+
+    public void setCapacidadeCarga(float capacidadeCarga) {
+        this.capacidadeCarga = capacidadeCarga;
+    }
+
+    public float getCarga() {
+        return carga;
+    }
+
+    public void setCarga(float carga) {
+        this.carga = carga;
+    }
+
     public NavioMercante() {
     }
     
-    public void carregamento() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Número de tripulantes: " + numTripulantes);
-        System.out.println("Volume: " + (carga/capacidadeCarga)*100 + "%");
-    } 
+    
 }

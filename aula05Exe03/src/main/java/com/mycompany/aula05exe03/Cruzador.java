@@ -1,23 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.mycompany.aula05exe03;
 
-public class Cruzador extends NavioDeGuerra {
+/**
+ *
+ * @author uniflcastro
+ */
+public class Cruzador extends NavioDeGuerra{
     protected int numCanhoes;
 
-    public Cruzador(int numCanhoes, double blindagem, double ataque, String nome, int numTripulantes) {
-        super(blindagem, ataque, nome, numTripulantes);
+    public Cruzador(int numCanhoes, float blindagem, float ataque, int numTripulante, String nome) {
+        super(blindagem, ataque, numTripulante, nome);
         this.numCanhoes = numCanhoes;
     }
-
     
-    
-    public Cruzador() {
-        
-    }
-
     @Override
-    public void poderDeFogo(){
-        double ataqueLocal = ataque * Math.sqrt(numCanhoes);
-        System.out.println("Poder de fogo do Navio Cruzador: " + ataqueLocal);
+    public void ExibirArmas(){
+        ExibirinfoGeral();
+        System.out.println("| Blindagem : " + blindagem + " |");
     }
+    
+    @Override
+    public void PoderDeFogo(){
+        this.ExibirArmas();
+        System.out.println("| Poder de Fogo: " + ataque * Math.sqrt(numCanhoes));
+    }
+
+    public int getNumCanhoes() {
+        return numCanhoes;
+    }
+
+    public void setNumCanhoes(int numCanhoes) {
+        this.numCanhoes = numCanhoes;
+    }
+    
     
 }
