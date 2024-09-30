@@ -10,6 +10,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Usu&#xe1;rios"/>
           </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="menuBuscar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuBuscarMouseClicked"/>
+              </Events>
+            </Menu>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

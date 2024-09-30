@@ -4,6 +4,15 @@
  */
 package view;
 
+import controller.UsuarioController;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author uniflcastro
@@ -16,7 +25,149 @@ public class Janela extends javax.swing.JFrame {
     public Janela() {
         initComponents();
     }
+    
+    public void setC(UsuarioController c) {
+        this.c = c;
+    }
+    
+    public JButton getBtnCadast() {
+        return btnCadast;
+    }
 
+    public void setBtnCadast(JButton btnCadast) {
+        this.btnCadast = btnCadast;
+    }
+
+    public JRadioButton getBtnFeminino() {
+        return btnFeminino;
+    }
+
+    public void setBtnFeminino(JRadioButton btnFeminino) {
+        this.btnFeminino = btnFeminino;
+    }
+
+    public JRadioButton getBtnMasculino() {
+        return btnMasculino;
+    }
+
+    public void setBtnMasculino(JRadioButton btnMasculino) {
+        this.btnMasculino = btnMasculino;
+    }
+
+    public ButtonGroup getBtnSexo() {
+        return btnSexo;
+    }
+
+    public void setBtnSexo(ButtonGroup btnSexo) {
+        this.btnSexo = btnSexo;
+    }
+
+    public JTextField getInputCPF() {
+        return inputCPF;
+    }
+
+    public void setInputCPF(JTextField inputCPF) {
+        this.inputCPF = inputCPF;
+    }
+
+    public JTextField getInputIdade() {
+        return inputIdade;
+    }
+
+    public void setInputIdade(JTextField inputIdade) {
+        this.inputIdade = inputIdade;
+    }
+
+    public JTextField getInputNome() {
+        return inputNome;
+    }
+
+    public void setInputNome(JTextField inputNome) {
+        this.inputNome = inputNome;
+    }
+
+    public JTextField getInputSobrenome() {
+        return inputSobrenome;
+    }
+
+    public void setInputSobrenome(JTextField inputSobrenome) {
+        this.inputSobrenome = inputSobrenome;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public JMenu getMenuBuscar() {
+        return menuBuscar;
+    }
+
+    public void setMenuBuscar(JMenu menuBuscar) {
+        this.menuBuscar = menuBuscar;
+    }
+
+    public JMenu getMenuUser() {
+        return menuUser;
+    }
+
+    public void setMenuUser(JMenu menuUser) {
+        this.menuUser = menuUser;
+    }
+
+    public JLabel getTxtCPF() {
+        return txtCPF;
+    }
+
+    public void setTxtCPF(JLabel txtCPF) {
+        this.txtCPF = txtCPF;
+    }
+
+    public JLabel getTxtIdade() {
+        return txtIdade;
+    }
+
+    public void setTxtIdade(JLabel txtIdade) {
+        this.txtIdade = txtIdade;
+    }
+
+    public JLabel getTxtNome() {
+        return txtNome;
+    }
+
+    public void setTxtNome(JLabel txtNome) {
+        this.txtNome = txtNome;
+    }
+
+    public JLabel getTxtSexo() {
+        return txtSexo;
+    }
+
+    public void setTxtSexo(JLabel txtSexo) {
+        this.txtSexo = txtSexo;
+    }
+
+    public JLabel getTxtSobrenome() {
+        return txtSobrenome;
+    }
+
+    public void setTxtSobrenome(JLabel txtSobrenome) {
+        this.txtSobrenome = txtSobrenome;
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +194,7 @@ public class Janela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuUser = new javax.swing.JMenu();
+        menuBuscar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +267,15 @@ public class Janela extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/src/img/file.png"))); // NOI18N
 
         menuUser.setText("Usuários");
+
+        menuBuscar.setText("Buscar");
+        menuBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuBuscarMouseClicked(evt);
+            }
+        });
+        menuUser.add(menuBuscar);
+
         jMenuBar1.add(menuUser);
 
         setJMenuBar(jMenuBar1);
@@ -188,8 +349,12 @@ public class Janela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastActionPerformed
-        // TODO add your handling code here:
+        c.CadastrarUsuario();
     }//GEN-LAST:event_btnCadastActionPerformed
+
+    private void menuBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuBuscarMouseClicked
+        c.Trocar();
+    }//GEN-LAST:event_menuBuscarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -225,7 +390,7 @@ public class Janela extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+private UsuarioController c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadast;
     private javax.swing.JRadioButton btnFeminino;
@@ -238,6 +403,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu menuBuscar;
     private javax.swing.JMenu menuUser;
     private javax.swing.JLabel txtCPF;
     private javax.swing.JLabel txtIdade;
