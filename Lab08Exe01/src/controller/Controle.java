@@ -46,12 +46,15 @@ public class Controle {
     }
     
     public void buscaPessoas() {
+        boolean cpfEncontrado = false;
         for(Pessoa p : listaDePessoas) {
             if(p.getCpf().equals(janela.getTxtBusca().getText())) {
                 janela.getTxtResultado().setText(p.toString());
+                cpfEncontrado = true;
             } 
-            else {
-                janela.getTxtResultado().setText("CPF não encontrado, tente novamente!");
+            
+            if(!cpfEncontrado) {
+                janela.getTxtResultado().setText("CPF não encontrado!");
             }
         }
     }
