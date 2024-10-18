@@ -18,11 +18,20 @@ public class AlunoDAO {
 //     Criamos a string da query onde selecionamos todas as 
 //     linhas da tabela aluno onde usuario seja igual ao usuario digitado 
 //     e senha igual a senha digitada
-       String query = "select * from aluno where usuario = '"
-               + aluno.getUsuarios() + "' AND senha = '" 
-               + aluno.getSenha() + "'";
+
+//       String query = "select * from aluno where usuario = '"
+//               + aluno.getUsuarios() + "' AND senha = '" 
+//               + aluno.getSenha() + "'"; STRING COM SQL IJECTION
+
+//     Query criada para evitar sql injection
+       String sql = "select * from aluno where usuario = ? AND senha = ?";
 //     criamos e preparamos a query e a conexão
-       PreparedStatement statement = conn.prepareStatement(query);
+       PreparedStatement statement = conn.prepareStatement(sql);
+       
+//     Método criado para setar o campo ? dentro da query para evitar sql injection
+       statement.setString(1, aluno.getUsuarios());
+       statement.setString(2, aluno.getSenha());
+       
 //     Executamos a query
        statement.execute();
 //     Salvamos o resultado dessa query em um objeto ResultSet que 
@@ -31,7 +40,7 @@ public class AlunoDAO {
        
        return resultado;
    }
-   
+// Porém esses métodos são vulneraveis a SQL Injection
    public void inserir(Aluno aluno) throws SQLException {
        String sql = "insert into aluno (nome, usuario, senha) values ('"
                + aluno.getNome() + "', '"
