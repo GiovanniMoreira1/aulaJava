@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import view.UsuarioFrame;
 
 public class ControllerLogin {
     private LoginFrame view;
@@ -36,6 +37,14 @@ public class ControllerLogin {
             if(res.next()){
                 JOptionPane.showMessageDialog(view, "Login efetuado!", 
                         "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                String nome = res.getString("nome");
+                String usuario = res.getString("usuario");
+                String senha = res.getString("senha");
+                Aluno aluno1 = new Aluno(nome, usuario, senha);
+                
+                UsuarioFrame uf = new UsuarioFrame(aluno1);
+                uf.setVisible(true);
+                view.setVisible(false);
 //          Dando errado modal de Login não efetuado
             } else{
                 JOptionPane.showMessageDialog(view, "Login não efetuado!", 

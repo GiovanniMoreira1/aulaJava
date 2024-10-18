@@ -50,4 +50,24 @@ public class AlunoDAO {
        statement.execute();
        conn.close();
    }
+   
+   public void atualizar(Aluno aluno) throws SQLException{
+       String sql = "update aluno set senha = ? where usuario = ?";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       statement.setString(1, aluno.getSenha());
+       statement.setString(2, aluno.getUsuarios());
+       statement.execute();
+       conn.close();
+       
+   }
+   
+   public void excluir(Aluno aluno) throws SQLException{
+       
+       String sql = "delete from aluno where usuario = ?";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       statement.setString(1, aluno.getUsuarios());
+       statement.execute();
+       conn.close();
+             
+   }
 }
