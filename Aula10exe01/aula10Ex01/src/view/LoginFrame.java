@@ -79,8 +79,12 @@ public class LoginFrame extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         txtUsuario = new javax.swing.JTextField();
         txtSenha = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnCadastro = new javax.swing.JMenu();
+        mnAluno = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SISTEMA DE ALUNOS");
 
         lblUsuario.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         lblUsuario.setText("Usuário :");
@@ -104,6 +108,21 @@ public class LoginFrame extends javax.swing.JFrame {
 
         txtSenha.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         txtSenha.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        mnCadastro.setText("Cadastro");
+
+        mnAluno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnAluno.setText("Incluir aluno");
+        mnAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAlunoActionPerformed(evt);
+            }
+        });
+        mnCadastro.add(mnAluno);
+
+        jMenuBar1.add(mnCadastro);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,7 +153,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(lblSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
@@ -145,6 +164,11 @@ public class LoginFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         login.loginAluno();
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void mnAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAlunoActionPerformed
+        CadastroFrame cf = new CadastroFrame();
+        cf.setVisible(true);
+    }//GEN-LAST:event_mnAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,8 +207,11 @@ public class LoginFrame extends javax.swing.JFrame {
     private ControllerLogin login;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JMenuItem mnAluno;
+    private javax.swing.JMenu mnCadastro;
     private javax.swing.JTextField txtSenha;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

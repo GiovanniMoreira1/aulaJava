@@ -31,4 +31,14 @@ public class AlunoDAO {
        
        return resultado;
    }
+   
+   public void inserir(Aluno aluno) throws SQLException {
+       String sql = "insert into aluno (nome, usuario, senha) values ('"
+               + aluno.getNome() + "', '"
+               + aluno.getUsuarios() + "', '"
+               + aluno.getSenha() + "')";
+       PreparedStatement statement = conn.prepareStatement(sql);
+       statement.execute();
+       conn.close();
+   }
 }
